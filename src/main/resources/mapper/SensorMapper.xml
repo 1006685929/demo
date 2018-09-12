@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.SensorDao">
+    <resultMap id="ResultMap" type="SensorData">
+        <id property="dId" column="id"/>
+        <result property="temperature" column="temperature"/>
+        <result property="humidity" column="humidity"/>
+        <result property="illumination" column="illumination"/>
+    </resultMap>
+
+    <select id="showAll" resultMap="ResultMap">
+       SELECT id,temperature,humidity,illumination
+        FROM sensor
+    </select>
+</mapper>
